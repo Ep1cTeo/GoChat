@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoChat</title>
+</head>
+<body>
+    <h1>Ingresa número de Whatsapp al que deseas enviar el mensaje</h1>
+    <form id="formWhatsapp" onsubmit="enviarWhatsapp(event)">
+        <label for="numeroWhatsapp">Numero de Whatsapp: </label>
+        <input type="tel" id="numeroWhatsapp" name="numeroWhatsapp" placeholder="Whatsapp" required>
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <script>
+        function enviarWhatsapp(event){
+            event.preventDefault();
+            let numeroWhatsapp = document.getElementById("numeroWhatsapp").value;
+            let nuevaURL = "https://api.whatsapp.com/send?phone="+numeroWhatsapp;
+            window.location.href = nuevaURL;
+        }
+    </script>
+</body>
+</html>
