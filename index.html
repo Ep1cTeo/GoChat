@@ -9,6 +9,80 @@
 <body>
     <h1>Ingresa número de Whatsapp al que deseas enviar el mensaje</h1>
     <form id="formWhatsapp" onsubmit="enviarWhatsapp(event)">
+
+        <label for="prefijo">Prefijo del pais: </label>
+        <select id="prefijo" name="prefijo">
+            <option value="1">EEUU (1)</option>
+            <option value="1">Canadá (1)</option>
+            <option value="52">México (52)</option>
+            <option value="54">Argentina (54)</option>
+            <option value="55">Brasil (55)</option>
+            <option value="57">Colombia (57)</option>
+            <option value="51">Perú (51)</option>
+            <option value="56">Chile (56)</option>
+            <option value="58">Venezuela (58)</option>
+            <option value="593">Ecuador (593)</option>
+            <option value="591">Bolivia (591)</option>
+            <option value="595">Paraguay (595)</option>
+            <option value="598">Uruguay (598)</option>
+            <option value="507">Panamá (507)</option>
+            <option value="506">Costa Rica (506)</option>
+            <option value="502">Guatemala (502)</option>
+            <option value="503">El Salvador (503)</option>
+            <option value="504">Honduras (504)</option>
+            <option value="505">Nicaragua (505)</option>
+            <option value="53">Cuba (53)</option>
+            <option value="1-809">República Dominicana (1-809)</option>
+            <option value="1-829">República Dominicana (1-829)</option>
+            <option value="1-849">República Dominicana (1-849)</option>
+            <option value="34">España (34)</option>
+            <option value="351">Portugal (351)</option>
+            <option value="44">Reino Unido (44)</option>
+            <option value="33">Francia (33)</option>
+            <option value="49">Alemania (49)</option>
+            <option value="39">Italia (39)</option>
+            <option value="41">Suiza (41)</option>
+            <option value="32">Bélgica (32)</option>
+            <option value="31">Países Bajos (Holanda) (31)</option>
+            <option value="46">Suecia (46)</option>
+            <option value="47">Noruega (47)</option>
+            <option value="45">Dinamarca (45)</option>
+            <option value="358">Finlandia (358)</option>
+            <option value="7">Rusia (7)</option>
+            <option value="86">China (86)</option>
+            <option value="81">Japón (81)</option>
+            <option value="82">Corea del Sur (82)</option>
+            <option value="61">Australia (61)</option>
+            <option value="64">Nueva Zelanda (64)</option>
+            <option value="27">Sudáfrica (27)</option>
+            <option value="234">Nigeria (234)</option>
+            <option value="20">Egipto (20)</option>
+            <option value="254">Kenia (254)</option>
+            <option value="91">India (91)</option>
+            <option value="92">Pakistán (92)</option>
+            <option value="880">Bangladesh (880)</option>
+            <option value="62">Indonesia (62)</option>
+            <option value="60">Malasia (60)</option>
+            <option value="65">Singapur (65)</option>
+            <option value="66">Tailandia (66)</option>
+            <option value="84">Vietnam (84)</option>
+            <option value="63">Filipinas (63)</option>
+            <option value="90">Turquía (90)</option>
+            <option value="966">Arabia Saudita (966)</option>
+            <option value="971">Emiratos Árabes Unidos (971)</option>
+            <option value="974">Qatar (974)</option>
+            <option value="965">Kuwait (965)</option>
+            <option value="98">Irán (98)</option>
+            <option value="972">Israel (972)</option>
+            <option value="963">Siria (963)</option>
+            <option value="964">Irak (964)</option>
+            <option value="218">Libia (218)</option>
+            <option value="249">Sudán (249)</option>
+            <option value="233">Ghana (233)</option>
+            <option value="225">Costa de Marfil (225)</option>
+            <option value="244">Angola (244)</option>
+            <option value="258">Mozambique (258)</option>
+
         <label for="numeroWhatsapp">Numero de Whatsapp: </label>
         <input type="tel" id="numeroWhatsapp" name="numeroWhatsapp" placeholder="Whatsapp" required>
         <br><br>
@@ -17,8 +91,9 @@
     <script>
         function enviarWhatsapp(event){
             event.preventDefault();
+            let prefijo = document.getElementById("prefijo").value;
             let numeroWhatsapp = document.getElementById("numeroWhatsapp").value;
-            let nuevaURL = "https://api.whatsapp.com/send?phone="+numeroWhatsapp;
+            let nuevaURL = "https://api.whatsapp.com/send?phone="+prefijo+numeroWhatsapp;
             window.location.href = nuevaURL;
         }
     </script>
